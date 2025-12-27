@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ModuloUsuarios</string>
+
+    <string-array name="roles_usuario">
+        <item>Administrador</item>
+        <item>Vendedor</item>
+        <item>Logisitca/Bodega</item>
+        <item>Contabilidad</item>
+    </string-array>
+</resources>

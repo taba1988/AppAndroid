@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="10dp"
+    android:clipToPadding="false"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:layout_marginTop="20dp"
+        android:background="#1976D2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Login"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333652"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAXI-LIMPIEZA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333652"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Calidad que se siente"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="#333652"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Inicio de Sesión"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext_rounded"
+            android:hint="Usuario Empresarial" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:paddingEnd="48dp" />
+
+            <ImageView
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Mostrar u ocultar contraseña"
+                android:src="@android:drawable/ic_menu_view" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cbRecordar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Recordarme?" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/txtOlvido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Olvidó su clave?"
+                android:textColor="#1976D2"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#1976D2"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:text="Inicio de Sesión"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txtRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="¿No tienes cuenta? Registrate"
+            android:textColor="#1976D2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Estás ingresando al sistema VIFAC-Sys. El acceso está restringido solo a usuarios autorizados. Esta plataforma está monitoreada; el uso inadecuado puede generar sanciones. Protege tu información y no compartas tus credenciales."
+            android:textColor="#555555"
+            android:textSize="12sp"
+            android:justificationMode="inter_word"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2025 · Diseñado por O.T.G – VIFAC-Sys"
+        android:textSize="12sp"
+        android:textColor="#777777"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
