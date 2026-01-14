@@ -88,14 +88,46 @@
                 android:background="#E0E0E0"
                 android:padding="10dp">
 
-                <TextView android:text="ITEM" android:layout_width="50dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="ID" android:layout_width="50dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="NOMBRES" android:layout_width="200dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="DOCUMENTO" android:layout_width="120dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="TELÉFONO" android:layout_width="100dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="DIRECCIÓN" android:layout_width="150dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="CORREO" android:layout_width="250dp" android:layout_height="wrap_content" android:textStyle="bold"/>
-                <TextView android:text="USUARIO" android:layout_width="100dp" android:layout_height="wrap_content" android:textStyle="bold"/>
+                <TextView
+                    android:text="ITEM"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="ID"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="NOMBRES"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="DOCUMENTO"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="TELÉFONO"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="DIRECCIÓN"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="CORREO"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="USUARIO"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <!-- Filas de datos -->
@@ -104,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <!-- Aquí inflas dinámicamente cada fila con la misma estructura que la cabecera -->
+                <!-- Aquí funciona dinámicamente cada fila con la misma estructura que la cabecera -->
             </LinearLayout>
 
         </LinearLayout>

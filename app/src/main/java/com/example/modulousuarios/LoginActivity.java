@@ -17,7 +17,7 @@ import androidx.activity.EdgeToEdge;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private DataBaseHelper dataBaseHelper; // B1: referencia DB
+    private DataBaseHelper dataBaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +25,24 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        // B2: Inicializar DB
+        // Inicializar DB
         dataBaseHelper = new DataBaseHelper(this);
 
-        // B3: Ajuste EdgeToEdge
+        // Ajuste EdgeToEdge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // B4: Referencias a componentes
+        // Referencias a componentes
         EditText etUsuario = findViewById(R.id.etUsuario);
         EditText etPassword = findViewById(R.id.etPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
         TextView txtRegistro = findViewById(R.id.txtRegistro);
         ImageView btnTogglePassword = findViewById(R.id.btnTogglePassword);
 
-        // B5: Toggle contraseña
+        // Toggle contraseña
         btnTogglePassword.setOnClickListener(v -> {
             if (etPassword.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
                 etPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             etPassword.setSelection(etPassword.getText().length());
         });
 
-        // B6: Botón Login real con SQLite
+        // Botón Login real con SQLite
         btnLogin.setOnClickListener(v -> {
             String usuario = etUsuario.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // B7: Ir a Registro
+        // Ir a Registro
         txtRegistro.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegistroActivity.class));
         });

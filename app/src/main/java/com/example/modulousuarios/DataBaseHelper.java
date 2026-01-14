@@ -7,14 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteConstraintException;
 
-
 public class DataBaseHelper extends SQLiteOpenHelper {
-
     private static final String DB_NAME = "VIFACSys.db";
     private static final int DB_VERSION = 1;
-
     private static final String TABLE_USUARIOS = "usuarios";
-
     private static final String COL_ID = "id";
     private static final String COL_NOMBRES = "nombres";
     private static final String COL_DOCUMENTO = "documento";
@@ -24,7 +20,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COL_CORREO = "correo";
     private static final String COL_PASSWORD = "password";
     private static final String COL_ROL = "rol";
-
     public DataBaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -44,7 +39,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 ")";
         db.execSQL(query);
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USUARIOS);
@@ -87,8 +81,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
-
-
     public boolean validarUsuario(String usuario, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(
@@ -103,7 +95,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
         return existe;
     }
-
     public Cursor obtenerUsuario(String usuario) {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery(
@@ -111,7 +102,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 new String[]{usuario}
         );
     }
-
     public Cursor obtenerTodosLosUsuarios() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery(

@@ -12,9 +12,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-/**
- * Test instrumentado para la pantalla de registro.
- */
+/** Test instrumentado para la pantalla de registro.*/
+
 @RunWith(AndroidJUnit4.class)
 public class RegistroInstrumentedTest {
 

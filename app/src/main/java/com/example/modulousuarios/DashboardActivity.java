@@ -27,13 +27,32 @@ public class DashboardActivity extends AppCompatActivity {
             return insets;
         });
 
-        // B1: Obtener el usuario que inició sesión
+        //Obtener el usuario que inició sesión
         String usuario = getIntent().getStringExtra(EXTRA_USUARIO);
 
-        // B2: Mostrar en TextView
-        TextView txtUsuario = findViewById(R.id.txtUsuario); // crea este TextView en tu layout
-        if(usuario != null){
-            txtUsuario.setText("Bienvenido, " + usuario);
+// --- logica par Datos paramostrar del usuario logueado---
+        TextView txtUsuario = findViewById(R.id.txtUsuario);
+        TextView txtCargo = findViewById(R.id.txtCargo);
+        TextView txtDocumento = findViewById(R.id.txtDocumento);
+
+        String loginNombre = getIntent().getStringExtra(EXTRA_USUARIO);
+
+        if (loginNombre != null) {
+            DataBaseHelper dbHelper = new DataBaseHelper(this);
+            android.database.Cursor cursor = dbHelper.obtenerUsuario(loginNombre);
+
+            if (cursor != null && cursor.moveToFirst()) {
+                // Obtener datos de las columnas de la Base de Datos
+                String nombres = cursor.getString(cursor.getColumnIndexOrThrow("nombres"));
+                String rol = cursor.getString(cursor.getColumnIndexOrThrow("rol"));
+                String doc = cursor.getString(cursor.getColumnIndexOrThrow("documento"));
+
+                // Mostrar los datos del usuario logeado
+                txtUsuario.setText("Nombres: " + nombres);
+                txtCargo.setText("Cargo: " + (rol != null ? rol : ""));
+                txtDocumento.setText("ID: " + doc);
+                cursor.close();
+            }
         }
 
         // Lógica botón CERRAR SESIÓN
@@ -44,7 +63,7 @@ public class DashboardActivity extends AppCompatActivity {
             finish();
         });
 
-        // ÚNICO PASO NUEVO: tarjeta Usuarios
+        // Logita para navegar a usuarios
         CardView cardUsuarios = findViewById(R.id.cardUsuarios);
         cardUsuarios.setOnClickListener(v -> {
             Intent intent = new Intent(DashboardActivity.this, UsuariosActivity.class);
